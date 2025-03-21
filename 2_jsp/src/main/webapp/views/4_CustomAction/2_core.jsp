@@ -253,6 +253,45 @@
 		특정 구분자를 통해서 순차적으로 접근하고자 할 때 사용되는 태그
 		
 		c:forTokens var="변수명" items="분리하고자 하는 대상" delims="구분자"
+		- 구분자를 통해서 분리된 각각의 값에 순차적으로 접근하여 반복문 수행
+		- 콤마(,)가 아닌 다른 구분자를 사용하고자 할 때 사용
+		- Java에서 문자열.split("구분자") 또는 StringTokenizer와 비슷한 기능
 	</pre>
+	
+	<%-- movies 라는 변수에 영화를 5개 저장 (구분자 : / . ,) --%>
+	<c:set var="movies">
+		아이언맨/토르,백설공주.미키17/캡틴아메리카,고독한미식가.너의이름은
+	</c:set>
+	
+	<h4>영화 목록</h4>
+	<ol>
+		<c:forEach var="m" items="${ movies }">
+			<li>${ m }</li>		
+		</c:forEach>
+	</ol>
+	
+	<ol>
+		<c:forTokens var="m" items="${ movies }" delims="/.,">
+			<li>${ m }</li>
+		</c:forTokens>
+	</ol>
+	
+	<h3>* url, query string 관련 - c:url, c:param</h3>
+	<pre>
+		- url 경로를 생성하고, query string을 정의해 둘 수 있는 태그
+		
+		c:url var="변수명" value="요청할url"
+			c:param	name="키값" value="데이터"
+			c:param	name="키값" value="데이터"
+		/c:url
+	</pre>
+	
+	<a href="list.do?cpage=1&num=10">기존방식</a>
+	<c:url var="listUrlurl" value="list.do">
+		<c:param name="cpage" value="1"/>
+		<c:param name="num" value="10"/>
+	</c:url>
+	
+	<a href="${ listUrl }">JSTL 방식</a>
 </body>
 </html>
