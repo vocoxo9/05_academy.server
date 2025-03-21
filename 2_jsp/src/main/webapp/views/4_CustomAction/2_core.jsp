@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="model.vo.Student, java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -130,7 +131,7 @@
 		</c:otherwise>
 	</c:choose>
 	<br>
-	
+
 	<%-- num1의 값이 20보다 크면 "20보다 큼"
 			10보다 크거나 같으면 "10보다 크거나 같음"
 			그렇지 않으면 "10보다 작음" 출력 	--%>
@@ -141,7 +142,7 @@
 		<c:when test="${ num ge 10 }">
 			<h3>10보다 크거나 같음</h3>
 		</c:when>
-		<c:otherwise >
+		<c:otherwise>
 			<h4>10보다 작음</h4>
 		</c:otherwise>
 	</c:choose>
@@ -154,25 +155,29 @@
 			c:forEach var="변수명" items="배열|컬렉션(순차적으로 접근하고자 하는 객체)"
 					  [varStatus="현재 접근된 요소의 상태값을 보관하는 변수명"]
 	</pre>
-	
+
 	<%-- 스크립틀릿을 사용하여 1~10까지 출력(한줄로) --%>
-	<% for(int i=1; i<=10; i++) { %>
-		<%= i %>
-	<% } %>
-	
+	<%
+	for (int i = 1; i <= 10; i++) {
+	%>
+	<%=i%>
+	<%
+	}
+	%>
+
 	<hr>
-	
+
 	<c:forEach var="i" begin="1" end="10">
 		${ i }
 	</c:forEach>
-	
+
 	<hr>
-	
+
 	<%-- h1 ~ h6 태그를 출력, "나는 hn 태그야" --%>
 	<c:forEach var="i" begin="1" end="6">
-		<h${ i }>나는 h${ i } 태그야</h${ i }>
+		<h ${ i }>나는 h${ i } 태그야</h${ i }>
 	</c:forEach>
-	
+
 	<c:set var="fruits">
 		딸기, 오렌지, 수박, 복숭아, 체리
 	</c:set>
@@ -183,7 +188,7 @@
 			<li>${ f }</li>
 		</c:forEach>
 	</ul>
-	
+
 	<%-- colors라는 변수에 4가지 색상을 콤마로 구분하여 저장 
 		 목록 태그로 해당 글자를 출력 (*저장된 컬러로 글자색 변경) --%>
 	<c:set var="colors">
@@ -193,22 +198,61 @@
 	<c:forEach var="c" items="${ colors }">
 		<li style="color : ${ c }">${ c }</li>
 	</c:forEach>
+	<br>
+	
+	<%
+	ArrayList<Student> list = new ArrayList<>();
+	list.add(new Student("박민준", 20, "남자"));
+	list.add(new Student("임성준", 20, "남자"));
+	list.add(new Student("노승재", 20, "남자"));
+	%>
+
+	<%-- request.setAttribute("list", list); --%>
+	<c:set var="list" value="<%=list%>" scope="request" />
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>이름</th>
+				<th>나이</th>
+				<th>성별</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:choose>
+				<c:when test="${empty list }">
+					<%-- 리스트가 비어있을 경우, "조회된 결과가 없습니다" 출력 --%>
+					<tr>
+						<td colspan="4">조회된 결과가 없습니다.</td>
+					</tr>
+				</c:when>
+				<c:otherwise>
+					<%-- 리스트가 비어있지 않은 경우, 제목셀에 맞춰서 내용 출력 --%>
+					<c:forEach var="s" items="${ list }" varStatus="vs">
+						<tr>
+							<%-- <td>${ vs.index }</td> --%>
+							<%-- index : 0부터 시작 --%>
+							<td>${ vs.count }</td>
+							<%-- count : 1부터 시작 --%>
+							<td>${ s.name }</td>
+							<td>${ s.age }</td>
+							<td>${ s.gender }</td>
+						</tr>
+					</c:forEach>
+				</c:otherwise>
+			</c:choose>
+
+		</tbody>
+	</table>
+	
+	<br>
+	
+	<h3>* 반복문 - forTokens</h3>
+	<pre>
+		특정 구분자를 통해서 순차적으로 접근하고자 할 때 사용되는 태그
+		
+		c:forTokens var="변수명" items="분리하고자 하는 대상" delims="구분자"
+	</pre>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
