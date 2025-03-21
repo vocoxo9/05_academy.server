@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+
+  <!-- 
+  		* web.xml 파일
+  			: 현재 프로젝트(웹 어플리케이션)를 구동시키는 서버(톰캣) 시작 시 제일 먼저 읽어지는 파일
+			: 배포 서술자(DD, Deployment Descriptor)라고 하여 웹 어플리케이션의 기본적인 설정을 작성한다 
+  -->
+  
+  <display-name>1_servlet</display-name>
+  
+  <!-- 
+  		* welcome file : url로 접근 시 루트 경로에서 보여지는 첫 페이지(메인페이지)를 지정하는 설정
+  				- 루트 경로 => http://현재구동중인IP주소:포트번호/어플리케이션루트명/
+  						http://localhost:8888/1_servlet
+  				- 파일 위치 : Content Directory 설정 경로(src.main.webapp) 
+  -->
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+</web-app>

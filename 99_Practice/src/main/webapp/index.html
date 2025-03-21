@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연습용 페이지</title>
+
+<style>
+header {
+	width: 100%;
+	padding: 3%;
+	background-color: #1990ff;
+	color: #fff;
+	font-size: large;
+}
+
+nav ul {
+	list-style-type: none;
+}
+
+nav ul li {
+	float: left;
+	padding: 2px;
+}
+
+nav ul li:hover {
+	background-color: #1990ff;
+	color: #fff;
+	border: 1px solid #fff;
+}
+
+nav ul li a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+li {
+	width: 130px;
+	height: 30px;
+	text-align: center;
+	border: 1px dotted skyblue;
+}
+</style>
+</head>
+<body>
+
+	<header>
+		<h3>★ 나의 복습 페이지 ★</h3>
+	</header>
+	<nav>
+		<ul>
+			<!-- TODO: practice1_random.html 파일로 이동하기 위한 링크 생성 -->
+			<li>
+				<!--  상대 경로 --> <a href="views/practice1_random.html">이동</a> <!--  절대 경로 -->
+				<!-- <a href="/practice/views/practice1_random.html">이동</a> -->
+			</li>
+			<li><a href="views/practice2_pizza.html">연습2 피자 주문</a></li>
+			<li><a href="wrongUrl">잘못된 접근</a></li>
+		</ul>
+	</nav>
+	<br>
+	<br>
+</body>
+</html>

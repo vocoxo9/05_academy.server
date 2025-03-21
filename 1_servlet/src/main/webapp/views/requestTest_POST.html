@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Post 방식 테스트</title>
+</head>
+<body>
+    <h1> * Post Test *</h1>
+	<hr>
+	<h2>간단한 정보 입력</h2>
+
+    <form action="/1_servlet/test2.do" method="post">
+		<div>
+			<label for="userName">이름</label>
+			<input type="text" name="userName" id="userName">
+		</div>
+
+		<div>성별 :
+			<input type="radio" name="gender" value="남자" id="genderM">
+			<label for="genderM">남자</label>
+
+			<input type="radio" name="gender" value="여자" id="genderF">
+			<label for="genderF">여자</label>
+		</div>
+
+		<div>
+			<label for="age">나이</label>
+			<input type="number" name="age" id="age" value="20">
+		</div>
+
+		<!-- div>label+select>option*5 -->
+		<div><label for="address">주소</label>
+			<select name="address" id="address">
+				<option value="서울">서울</option>
+				<option value="인천">인천</option>
+				<option value="경기">경기</option>
+				<option value="강원">강원</option>
+				<option value="제주">제주</option>
+			</select>
+		</div>
+
+		<div>
+			<label for="height">키</label>
+			<input type="range" name="height" id="height"
+				min="120" max="200" value="160" step="5">
+		</div>
+
+		<div>좋아하는 음식 : 
+			<input type="checkbox" name="food" value="한식">한식
+			<input type="checkbox" name="food" value="중식">중식
+			<input type="checkbox" name="food" value="일식">일식
+			<input type="checkbox" name="food" value="양식">양식
+			<input type="checkbox" name="food" value="미국식">미국식
+		</div>
+
+		<br>
+		<input type="submit" value="제출">
+		<input type="reset" value="초기화">
+	</form>
+</body>
+</html>

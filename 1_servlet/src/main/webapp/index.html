@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>서블릿 시작</title>
+</head>
+<body>
+	<h1>안녕 서블릿!</h1>
+	
+	<hr>
+	
+	<h2>* Servlet</h2>
+	<p>
+		서블릿 : 웹 서비스를 위한 <b>자바 클래스</b>. 자바를 사용해서 웹을 만들기 위한 기술<br>
+		=> 사용자의 요청을 받아 처리하고 그에 해당하는 응답페이지를 만들어 다시 사용자에게 전송하는 역할
+		(Controller 역할) <br>
+		=> 웹에서 동적인 페이지를 자바로 구현할 수 있게 도와주는 역할(Java로 HTML 구현)
+	</p>
+	
+	<br><br>
+	<!-- * 상대 경로 : 현재 페이지의 url 주소에서 마지막 / 뒤에 요청한 url 주소를 덧붙여서 요청(찾게 됨) 
+				=> localhost:8888/1_servlet/요청한url주소
+		 * 절대 경로 : 요청 주소를 / 부터 작성 ( / : 루트 경로)
+		 			=> 톰캣 서버IP주소 : 포트번호 뒤에 요청주소를 덧붙여서 요청(찾게됨)
+		 			es) /views/requestTest_GET.html 로 요청하게 됨
+		 			
+		 			/1_servlet/views/... 요청해야 현재 웹앱에 있는 해당 파일을 찾을 수 있을 것 			
+	-->
+		
+	<a href="views/requestTest_GET.html">* Get 방식 테스트</a>
+	<br>
+	<a href="views/requestTest_POST.html">* POST 방식 테스트</a>
+	
+</body>
+</html>
