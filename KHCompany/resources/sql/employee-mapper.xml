@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-	<entry key="">
-	
+	<entry key="selectEmployeeList">
+		SELECT EMP_ID, EMP_NAME,
+		NVL(DEPT_TITLE, '미지정') DEPT_TITLE, JOB_NAME,
+		TO_CHAR(HIRE_DATE, 'YYYY-MM-DD') HIRE_DATE
+		FROM EMPLOYEE
+		LEFT JOIN DEPARTMENT ON DEPT_CODE = DEPT_ID
+		JOIN JOB USING (JOB_CODE)
+		WHERE ENT_YN = 'N'
+		ORDER BY EMP_ID
 	</entry>
 </properties>

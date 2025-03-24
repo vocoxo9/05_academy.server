@@ -14,7 +14,7 @@ public class Employee {
 	private double bonus;
 	
 	private int manager;	// 사수정보(사수사번 또는 사수명)
-	private String hirDate;
+	private String hireDate;
 	private String entDate;
 	private char entYn;		// 'Y' 또는 'N'
 	
@@ -23,7 +23,7 @@ public class Employee {
 	}
 
 	public Employee(int empId, String empName, String empNo, String email, String dept, String job, int salary,
-			double bonus, int manager, String hirDate, String entDate, char entYn) {
+			double bonus, int manager, String hireDate, String entDate, char entYn) {
 		super();
 		this.empId = empId;
 		this.empName = empName;
@@ -34,9 +34,19 @@ public class Employee {
 		this.salary = salary;
 		this.bonus = bonus;
 		this.manager = manager;
-		this.hirDate = hirDate;
+		this.hireDate = hireDate;
 		this.entDate = entDate;
 		this.entYn = entYn;
+	}
+
+	
+	public Employee(int empId, String empName, String dept, String job, String hireDate) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+		this.dept = dept;
+		this.job = job;
+		this.hireDate = hireDate;
 	}
 
 	public int getEmpId() {
@@ -111,12 +121,12 @@ public class Employee {
 		this.manager = manager;
 	}
 
-	public String getHirDate() {
-		return hirDate;
+	public String getHireDate() {
+		return hireDate;
 	}
 
-	public void setHirDate(String hirDate) {
-		this.hirDate = hirDate;
+	public void setHireDate(String hireDate) {
+		this.hireDate = hireDate;
 	}
 
 	public String getEntDate() {
@@ -139,7 +149,7 @@ public class Employee {
 	public String toString() {
 		return "Employee [empId=" + empId + ", empName=" + empName + ", empNo=" + empNo + ", email=" + email + ", dept="
 				+ dept + ", job=" + job + ", salary=" + salary + ", bonus=" + bonus + ", manager=" + manager
-				+ ", hirDate=" + hirDate + ", entDate=" + entDate + ", entYn=" + entYn + "]";
+				+ ", hireDate=" + hireDate + ", entDate=" + entDate + ", entYn=" + entYn + "]";
 	}
 	
 }

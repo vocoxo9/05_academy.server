@@ -26,7 +26,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 		// * Connection 객체 반납
 		JDBCTemplate.close(conn);
 		// * 결과를 리턴
-		return null;
+		return list;
 	}
 
 	@Override
