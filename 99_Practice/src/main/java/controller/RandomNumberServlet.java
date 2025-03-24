@@ -27,9 +27,10 @@ public class RandomNumberServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO: practice1_result.jsp 페이지로 응답하기
-		System.out.println(" ## 요청 들어왔음 ##");
+		// System.out.println("@@@ 요청 들어왔음 @@@");
 		
-		request.getRequestDispatcher("views/practice1_result.jsp").forward(request, response);
+		request.getRequestDispatcher("views/practice1_result.jsp")
+				.forward(request, response);
 	}
 
 	/**

@@ -8,16 +8,22 @@
 </head>
 <body>
 	<%-- 1 ~ 45까지 랜덤 숫자 6개를 뽑아 출력하기 --%>
-	<h1>결과 페이지!!</h1>
 	<% 
 		int[] arr = new int[6];
-		for(int i=0; i<6; i++){
-			arr[i] = (int)(Math.random()*45 + 1);
+	
+		for(int i=0; i<arr.length; i++) {
+			arr[i] = (int)(Math.random() * 45 + 1);
 		}
 	%>
 	
-	<% for(int i=0; i<arr.length; i++) {%>
-		<%= arr[i] %>	<br>
+	<% for (int i=0; i<arr.length; i++) { %>
+		<%= arr[i] %> <br>
 	<% } %>
 </body>
 </html>
+
+
+
+
+
+

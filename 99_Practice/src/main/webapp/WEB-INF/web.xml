@@ -4,12 +4,29 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	id="WebApp_ID" version="4.0">
 	<display-name>99_Practice</display-name>
+
+
+	<!-- XML 방식으로 URL 매핑 -->
+	<servlet>
+		<servlet-name>orderResult</servlet-name>
+		<servlet-class>controller.OrderResultServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>orderResult</servlet-name>
+		<url-pattern>/orderResult.do</url-pattern>
+	</servlet-mapping>
+
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
-
+	
 	<error-page>
 		<error-code>404</error-code>
 		<location>/views/error/404.jsp</location>
 	</error-page>
+	
 </web-app>
+
+
+
+

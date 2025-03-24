@@ -70,3 +70,7 @@ local.properties
 .sts4-cache/
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse
+
+
+# 99_practice 폴더 무시
+/99_Practice
