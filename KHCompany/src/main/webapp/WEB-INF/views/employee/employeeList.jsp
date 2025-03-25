@@ -26,7 +26,7 @@
 	<jsp:include page="../common/header.jsp" />
 
 	<main class="container-lg">
-		<button class="btn btn-primary" onclick="insert()">사원 추가</a></button>
+		<button class="btn btn-primary">사원 추가</a></button>
 		<button class="btn btn-primary">사원 정보 수정</button>
 		<button class="btn btn-primary">사원 삭제</button>
 		<table class="table table-striped">
